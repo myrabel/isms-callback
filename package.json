@@ -1,0 +1,27 @@
+{
+  "name": "sigfox-callback",
+  "version": "2.0.0",
+  "description": "Callback to save data from sigfox",
+  "keywords": "sigfox",
+  "main": "server.js",
+  "dependencies": {
+    "@hapi/hapi": "18.3.1",
+    "@hapi/vision": "5.5.2",
+    "axios": "^0.19.0",
+    "graphql-tag": "^2.10.1",
+    "handlebars": "4.1.2",
+    "moment": "2.24.0",
+    "pg": "7.11.0"
+  },
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0 "
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node postinstall.js",
+    "start": "node server.js"
+  },
+  "author": "Denzel Wamburu",
+  "license": "PRIVATE"
+}
