@@ -13,7 +13,7 @@ const Hapi = require("@hapi/hapi");
 const start = async () => {
   const server = Hapi.server({
     host: process.env.HOST || "0.0.0.0",
-    port: process.env.PORT || 80
+    port: process.env.PORT || 8080
   });
   await server.register(require("@hapi/vision"));
 
