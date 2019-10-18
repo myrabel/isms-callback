@@ -136,6 +136,11 @@ const getDownlinkString = (number, station, rssi) => {
 };
 
 const saveToApi = async (rawdata) => {
+  const rawdata_  = rawdata.reading;
+  const rawfillLevel = parseInt(rawdata_.slice(0, 4), 16);
+  const rawbatLevel = parseInt(rawdata_.slice(4, 9), 16);
+  const fillLevel = (rawfillLevel/100) - 100;
+  const batLevel = (rawbatLevel/100) - 100;
   await axios
     .post(process.env.ENDPOINT, {
       query: `
@@ -147,8 +152,8 @@ const saveToApi = async (rawdata) => {
       variables: {
        data: {
         rawreading: rawdata.data,
-        reading: rawdata.reading,
-        batlevel: rawdata.batlevel,
+        reading: fillLevel,
+        batlevel: batLevel,
         station: rawdata.station,
         rssi: rawdata.rssi,
         snr: rawdata.snr,
