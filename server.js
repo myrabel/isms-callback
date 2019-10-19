@@ -152,8 +152,8 @@ const saveToApi = async (rawdata) => {
       variables: {
        data: {
         rawreading: rawdata.data,
-        reading: fillLevel,
-        batlevel: batLevel,
+        reading: fillLevel.toFixed(2),
+        batlevel: batLevel.toFixed(2),
         station: rawdata.station,
         rssi: rawdata.rssi,
         snr: rawdata.snr,
